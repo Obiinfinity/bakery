@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--fontFamily);
+  background: var(--baseColor);
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  /* border: 2px solid green; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--baseColor);
+}
+
+.nav #check {
+  display: none;
+}
+.nav .menu {
+  display: none;
+}
+.nav .logo {
+  /* border: 2px solid red; */
+  padding: 20px;
+}
+.nav .logo a {
+  color: #ffff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.nav .navItems {
+  display: flex;
+}
+.nav .navItems ul {
+  display: flex;
+  /* border: 2px solid red; */
+  align-items: center;
+  margin-right: 20px;
+}
+.nav .navItems ul li {
+  margin: 0 20px;
+}
+.nav .navItems ul li a {
+  text-transform: capitalize;
+  font-size: 19px;
+  color: #ffff;
+  padding: 10px;
+  position: relative;
+  transition: 1s linear;
+}
+.nav .navItems ul li a::before {
+  content: "";
+  height: 2px;
+  width: 50%;
+  border-radius: 50%;
+  background: rgb(33, 225, 33);
+  position: absolute;
+  bottom: 2px;
+  display: none;
+  transition: 1s linear;
+}
+.nav .navItems ul li a:hover {
+  color: rgb(33, 225, 33);
+}
+.nav .navItems ul li a:hover::before {
+  display: block;
+  transform: translateX(15px);
+  transition: 1s linear;
+  transform-origin: left;
+}
+.nav .navItems .navBtn {
+  /* border: 2px solid yellow; */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.nav .navItems .navBtn a {
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 2px solid green;
+  border-radius: 30px;
+  color: #ffff;
+}
+.nav .navItems .navBtn a:first-child {
+  margin: 0;
+}
+.nav .navItems .navBtn a:last-child {
+  background-color: green;
+  color: #ffff;
+  border: 0;
+}
+
+/* hero section */
+main {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  /* border: 2px solid pink; */
+}
+#hero {
+  padding: 0 80px;
+}
+.gridSystem {
+  display: grid;
+  /* border: 2px solid green; */
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  position: relative;
+}
+.gridSystem .gridItem {
+  /* border: 2px solid orangered; */
+  height: 30rem;
+  width: 100%;
+}
+.gridSystem #item1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/6;
+  position: relative;
+}
+.gridSystem .gridItem .gridContent {
+  z-index: 2;
+}
+.gridSystem #item1 .gridContent {
+  position: absolute;
+  width: 90%;
+  top: 100px;
+  left: 30px;
+  right: 0;
+  height: 50%;
+  /* border: 2px solid yellow; */
+}
+.gridSystem #item1 h1 {
+  color: rgb(33, 225, 33);
+  font-size: 80px;
+}
+.gridSystem #item1 h3 {
+  color: #fff;
+  font-size: 30px;
+}
+.gridSystem #item1 p {
+  color: #fff;
+  font-size: 20px;
+}
+.gridSystem #item1 .gridBtn {
+  margin-top: 25px;
+}
+.gridSystem #item1 .gridBtn a {
+  color: #fff;
+  padding: 15px 30px;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.gridSystem #item2 img {
+  height: 30rem;
+  background-color: rgba(13, 84, 5, 0.7);
+  width: 30rem;
+  border-radius: 50%;
+  transition: 2s animation linear;
+}
+.gridSystem .animation {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+  place-items: center;
+  /* transform:   translateX(-5%); */
+  overflow: hidden;
+  /* border: 2px solid green; */
+}
+.gridSystem .animation .circlebg {
+  height: 30px;
+  width: 30px;
+  background-color: rgba(13, 84, 5, 0.5);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  opacity: 0.5;
+  animation: scale 3s 0.5s ease-in-out infinite;
+}
+.gridSystem .animation .circlebg::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: rgba(13, 84, 5, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.7;
+  transform: translateY(-1000%);
+  transform-origin: left;
+}
+.gridSystem .animation .circlebg::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  height: 30px;
+  width: 30px;
+  background-color: rgba(13, 84, 5, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.8;
+  transform: translateX(1000%);
+  transform-origin: right;
+}
+
+/* keyframe */
+@keyframes scale {
+  0% {
+    transform: (1.2);
+  }
+  50% {
+    transform: (1.1);
+  }
+  70% {
+    transform: (1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* ABOUT */
+
+#about {
+  padding: 20px 90px;
+  margin-top: 50px;
+  width: 100%;
+  /* border: 2px solid red; */
+  background-color: #121212;
+}
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* border: 2px solid green; */
+  /* gap: 30px; */
+}
+.aboutGrid .aboutItems {
+  /* border: 2px solid grey; */
+  height: 30rem;
+  position: relative;
+}
+.aboutGrid .aboutItems .content {
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid orange; */
+}
+.aboutGrid .item1 .content {
+  background: url(../Images/mae-mu-kID9sxbJ3BQ-unsplash.jpg) no-repeat center
+    right / cover;
+}
+.aboutGrid .items2 {
+  background-color: #000;
+  filter: drop-shadow(3px 5px 3px rgba(0, 0, 0, 0.7));
+}
+.aboutGrid .items2 .content {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  justify-content: center;
+  position: absolute;
+  height: 65%;
+  line-height: 1.5;
+  top: 18%;
+  left: 0;
+  right: 0;
+  padding: 0 30px;
+}
+.aboutGrid .items2 .content h4 {
+  color: green;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.aboutGrid .items2 .content h1 {
+  width: 90%;
+  font-size: 35px;
+  text-transform: capitalize;
+}
+.aboutGrid .items2 .content h1 span {
+  color: rgb(29, 228, 29);
+}
+.aboutGrid .items2 .content p {
+  width: 90%;
+  font-size: 17px;
+  font-weight: 500;
+}
+.aboutGrid .items2 .content .aboutBtn {
+  margin-top: 30px;
+}
+.aboutGrid .items2 .content .aboutBtn a {
+  padding: 15px 30px;
+  border-radius: 10px;
+  background-color: green;
+  font-size: 18px;
+  color: #fff;
+}
+.aboutGrid .aboutItems .content img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* our menu */
+#menu {
+  padding: 20px 100px;
+}
+.menuHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+.menuHeader h1 {
+  text-transform: capitalize;
+  color: green;
+}
+.menuHeader h3 {
+  text-transform: capitalize;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+.menuGrid .menuitems {
+  height: 25rem;
+  /* border: 2px solid grey; */
+  /* padding: 10px; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.5s linear;
+  text-align: center;
+}
+.menuGrid .menuitems .cart {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+  /* padding: 10px; */
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  color: rgb(33, 225, 33);
+  cursor: pointer;
+}
+.menuGrid .menuitems .content {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  width: 100%;
+  line-height: 1.5;
+}
+.menuGrid .menuitems h2 {
+  color: #fff;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.menuGrid .menuitems p {
+  color: #fff;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.menuGrid .menuitems .price {
+  color: rgb(29, 228, 29);
+  font-size: 20px;
+  font-weight: 900;
+  /* background-color: #000; */
+}
+
+.menuGrid #item1 {
+  background: url(../Images/nha-van-9bxJoydEv4U-unsplash.jpg) no-repeat center
+    center / cover;
+}
+.menuGrid #item2 {
+  background: url(../Images/alice-pasqual-cOKmuKWSsiM-unsplash.jpg) no-repeat
+    center center / cover;
+}
+.menuGrid #item3 {
+  background: url(../Images/jennie-brown-MKBoRZEGeiM-unsplash.jpg) no-repeat
+    center center / cover;
+}

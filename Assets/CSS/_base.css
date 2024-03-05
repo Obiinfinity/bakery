@@ -1,0 +1,11 @@
+:root {
+  --baseColor: #000;
+  --mainColor: green;
+  --fontFamily: "Raleway-Medium" ;
+  --naturalColor: #fff;
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url(../Fonts/Raleway/static/Raleway-Medium.ttf);
+}
